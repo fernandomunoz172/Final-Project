@@ -43,9 +43,61 @@ namespace MyApp // Note: actual namespace depends on the project name.
                                    break;
                                 }
                                 break;
+                                case 3:
+                                while (true)
+                                {
+                                    Clear();
+                                WriteLine("NOT AVAILABLE YET");
+                                Write("Press Esc to go back.");
+                                ConsoleKey key = Console.ReadKey().Key;
+                                if (key==ConsoleKey.Escape)
+                                {
+                                    break;
+                                }
+                                else 
+                                {
+                                    continue;
+                                }
+                                }
+                                break;
+                                 case 4:
+                                while (true)
+                                {
+                                    Clear();
+                                WriteLine("NOT AVAILABLE YET");
+                                Write("Press Esc to go back.");
+                                ConsoleKey key = Console.ReadKey().Key;
+                                if (key==ConsoleKey.Escape)
+                                {
+                                    break;
+                                }
+                                else 
+                                {
+                                    continue;
+                                }
+                                }
+                                break;
+                                 case 5:
+                                while (true)
+                                {
+                                    Clear();
+                                WriteLine("NOT AVAILABLE YET");
+                                Write("Press Esc to go back.");
+                                ConsoleKey key = Console.ReadKey().Key;
+                                if (key==ConsoleKey.Escape)
+                                {
+                                    break;
+                                }
+                                else 
+                                {
+                                    continue;
+                                }
+                                }
+                                break;
                             }
                             if (menu==6)
                             {
+                                Clear();
                                 break;
                             }
                         }
@@ -116,7 +168,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 try
                 {
                     ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("SECTIONS");
+                    Console.WriteLine(" SECTIONS");
                     ForegroundColor = ConsoleColor.Yellow;
                     WriteLine("1.- MATH");
                     ForegroundColor = ConsoleColor.Red;
@@ -130,9 +182,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
                        ForegroundColor = ConsoleColor.DarkGray;
                     WriteLine(@$"                     NOT AVAILABLE", 20);
                         ForegroundColor = ConsoleColor.Magenta;
-                       Write("5. GEOGRAPHY");
+                       Write("5. MOVIES");
                        ForegroundColor = ConsoleColor.DarkGray;
-                    WriteLine(@$"                     NOT AVAILABLE", 20);
+                    WriteLine(@$"                        NOT AVAILABLE", 20);
                         ForegroundColor = ConsoleColor.DarkRed;
                        WriteLine("6. BACK");
                         ForegroundColor = ConsoleColor.White;
@@ -581,6 +633,46 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                 }
         
         }
+       static char Question11()
+        {
+            while (true)
+            {
+                try{
+ ForegroundColor = ConsoleColor.White;
+WriteLine("How old was Queen Elizabeth II when she was crowned the Queen of England?");
+ForegroundColor = ConsoleColor.Blue;
+WriteLine("a) 19");
+ForegroundColor = ConsoleColor.Yellow;
+WriteLine("b) 22");
+ForegroundColor = ConsoleColor.Magenta;
+WriteLine("c) 27");
+ForegroundColor = ConsoleColor.Green;
+WriteLine("d) 76");
+ForegroundColor = ConsoleColor.DarkGray;
+WriteLine("TYPE JUST THE LETTER OF THE ANSWER");
+ForegroundColor = ConsoleColor.White;
+Write("Answer: ");
+char answer=Convert.ToChar(ReadLine());
+Clear();
+if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
+                        return answer;
+                    else
+                    {
+                        Clear();
+                         ForegroundColor = ConsoleColor.Red;
+                        WriteLine("That was not in the option. TRY AGAIN");
+                        continue;
+                    }
+                }
+                catch
+                {
+                    Clear();
+                     ForegroundColor = ConsoleColor.Red;
+                    WriteLine("That was not in the option. TRY AGAIN");
+                }
+                }
+        
+        }
         static void HistoryTrivia()
         {
             while (true)
@@ -800,6 +892,7 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                             while (true)
                             {
                                 Clear();
+                                ForegroundColor=ConsoleColor.Red;
                                 WriteLine("YOU LOST");
                                 ForegroundColor=ConsoleColor.White;
                                 WriteLine($"Score: {score}");
