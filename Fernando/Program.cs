@@ -20,47 +20,21 @@ namespace MyApp // Note: actual namespace depends on the project name.
                             switch (menu)
                             {
                                 case 2:
-                                    Clear();
-                                int question=1;
-                                int score=0;
-                                Status(ref question, ref score);
-                                ForegroundColor = ConsoleColor.White;
-                                char question1=Question1();
-                                Clear();
-                                if (question1=='a')
+                                while (true)
                                 {
-                                    CorrectAnswer(ref score);
-                                      question++;
+                                   int finalscore=HistoryTrivia();
+                                   ForegroundColor=ConsoleColor.Yellow;
+                            WriteLine($"YOUR FINAL SCORE IS {finalscore} ");
+                             ForegroundColor=ConsoleColor.White;
+                            Write("Press Esc if you want to go back to the menu, or  Press Enter if you want to play again:");
+                            ConsoleKey key = Console.ReadKey().Key;
+                            if (key == ConsoleKey.Enter)
+                             continue;
+                             else if (key==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }
                                 }
-                            else{
-                                WrongAnswer(ref score);
-                                  question++;
-                            }
-                            Status(ref question, ref score);
-                            char question2=Question2();
-                            if (question2=='c')
-                            {
-                                 CorrectAnswer(ref score);
-                                 question++;
-                            }
-                            else 
-                            {
-                                 WrongAnswer(ref score); 
-                                 question++;
-                            }
-                            Status(ref question, ref score);
-                            char question3=Question3();
-                            if (question3=='b')
-                            {
-                                 CorrectAnswer(ref score);
-                                 question++;
-                            }
-                            else 
-                            {
-                                 WrongAnswer(ref score); 
-                                 question++;
-                            }
-                            
                                 break;
                             }
                         }
@@ -132,7 +106,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 try
                 {
                     ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("SECTIOONS");
+                    Console.WriteLine("SECTIONS");
                     ForegroundColor = ConsoleColor.Yellow;
                     WriteLine("1.- MATH");
                     ForegroundColor = ConsoleColor.Red;
@@ -140,15 +114,15 @@ namespace MyApp // Note: actual namespace depends on the project name.
                     ForegroundColor = ConsoleColor.Green;
                     Write("3. BIOLOGY");
                     ForegroundColor = ConsoleColor.DarkGray;
-                    WriteLine(@$"NOT AVAILABLE", 20);
+                    WriteLine(@$"                       NOT AVAILABLE", 20);
                       ForegroundColor = ConsoleColor.Blue;
                        Write("4. GEOGRAPHY");
                        ForegroundColor = ConsoleColor.DarkGray;
-                    WriteLine(@$"NOT AVAILABLE", 20);
+                    WriteLine(@$"                     NOT AVAILABLE", 20);
                         ForegroundColor = ConsoleColor.Magenta;
                        Write("5. GEOGRAPHY");
                        ForegroundColor = ConsoleColor.DarkGray;
-                    WriteLine(@$"NOT AVAILABLE", 20);
+                    WriteLine(@$"                     NOT AVAILABLE", 20);
                         ForegroundColor = ConsoleColor.DarkRed;
                        WriteLine("6. BACK");
                         ForegroundColor = ConsoleColor.White;
@@ -258,6 +232,7 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
             while (true)
             {
                 try{
+ ForegroundColor = ConsoleColor.White;
 WriteLine("Which era marked a switch from agricultural practices to industrial practices?");
 ForegroundColor = ConsoleColor.Blue;
 WriteLine("a) French Revolution");
@@ -303,7 +278,7 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
         Write("CORRECT");
          ForegroundColor = ConsoleColor.Green;
         WriteLine(@"    +20 pts",20);
-        score=+20;
+        score+=20;
         }
         static void WrongAnswer(ref int score)
         {
@@ -311,9 +286,56 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
         Write("INCORRECT");
          ForegroundColor = ConsoleColor.Red;
         WriteLine(@"    -10 pts",20);
-        score=-10;
+        score-=10;
         }
+        static int HistoryTrivia()
+        {
+            Clear();
+                                int question=1;
+                                int score=0;
+                                Status(ref question, ref score);
+                                ForegroundColor = ConsoleColor.White;
+                                char question1=Question1();
+                                Clear();
+                                if (question1=='a')
+                                {
+                                    CorrectAnswer(ref score);
+                                      question++;
+                                }
+                            else{
+                                WrongAnswer(ref score);
+                                  question++;
+                            }
+                            Status(ref question, ref score);
+                            char question2=Question2();
+                            if (question2=='c')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score); 
+                                 question++;
+                            }
+                            Status(ref question, ref score);
+                            char question3=Question3();
+                            if (question3=='b')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score); 
+                                 question++;
+                            }
+                            
+                            return score;
+                            }
+                        }
+
         }
-    }
+        
 
 
