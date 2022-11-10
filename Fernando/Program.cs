@@ -639,15 +639,135 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
             {
                 try{
  ForegroundColor = ConsoleColor.White;
-WriteLine("How old was Queen Elizabeth II when she was crowned the Queen of England?");
+WriteLine("Adolf Hitler was born in which country?");
 ForegroundColor = ConsoleColor.Blue;
-WriteLine("a) 19");
+WriteLine("a) Russia");
 ForegroundColor = ConsoleColor.Yellow;
-WriteLine("b) 22");
+WriteLine("b) England");
 ForegroundColor = ConsoleColor.Magenta;
-WriteLine("c) 27");
+WriteLine("c) Germany");
 ForegroundColor = ConsoleColor.Green;
-WriteLine("d) 76");
+WriteLine("d) France");
+ForegroundColor = ConsoleColor.DarkGray;
+WriteLine("TYPE JUST THE LETTER OF THE ANSWER");
+ForegroundColor = ConsoleColor.White;
+Write("Answer: ");
+char answer=Convert.ToChar(ReadLine());
+Clear();
+if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
+                        return answer;
+                    else
+                    {
+                        Clear();
+                         ForegroundColor = ConsoleColor.Red;
+                        WriteLine("That was not in the option. TRY AGAIN");
+                        continue;
+                    }
+                }
+                catch
+                {
+                    Clear();
+                     ForegroundColor = ConsoleColor.Red;
+                    WriteLine("That was not in the option. TRY AGAIN");
+                }
+                }
+        
+        }
+        static char Question12()
+        {
+            while (true)
+            {
+                try{
+ ForegroundColor = ConsoleColor.White;
+WriteLine("The disease that ravaged and killed a third of Europe's population in the 14th century is known as:");
+ForegroundColor = ConsoleColor.Blue;
+WriteLine("a) Malaria");
+ForegroundColor = ConsoleColor.Yellow;
+WriteLine("b) The Gray Death");
+ForegroundColor = ConsoleColor.Magenta;
+WriteLine("c) The Black Death");
+ForegroundColor = ConsoleColor.Green;
+WriteLine("d) The Black Poison");
+ForegroundColor = ConsoleColor.DarkGray;
+WriteLine("TYPE JUST THE LETTER OF THE ANSWER");
+ForegroundColor = ConsoleColor.White;
+Write("Answer: ");
+char answer=Convert.ToChar(ReadLine());
+Clear();
+if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
+                        return answer;
+                    else
+                    {
+                        Clear();
+                         ForegroundColor = ConsoleColor.Red;
+                        WriteLine("That was not in the option. TRY AGAIN");
+                        continue;
+                    }
+                }
+                catch
+                {
+                    Clear();
+                     ForegroundColor = ConsoleColor.Red;
+                    WriteLine("That was not in the option. TRY AGAIN");
+                }
+                }
+        
+        }
+        static char Question13()
+        {
+            while (true)
+            {
+                try{
+ ForegroundColor = ConsoleColor.White;
+WriteLine("Which man wrote a document known as the 95 Theses?");
+ForegroundColor = ConsoleColor.Blue;
+WriteLine("a) Voltaire");
+ForegroundColor = ConsoleColor.Yellow;
+WriteLine("b) Saint August");
+ForegroundColor = ConsoleColor.Magenta;
+WriteLine("c) Martin Luther");
+ForegroundColor = ConsoleColor.Green;
+WriteLine("d) The Pope");
+ForegroundColor = ConsoleColor.DarkGray;
+WriteLine("TYPE JUST THE LETTER OF THE ANSWER");
+ForegroundColor = ConsoleColor.White;
+Write("Answer: ");
+char answer=Convert.ToChar(ReadLine());
+Clear();
+if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
+                        return answer;
+                    else
+                    {
+                        Clear();
+                         ForegroundColor = ConsoleColor.Red;
+                        WriteLine("That was not in the option. TRY AGAIN");
+                        continue;
+                    }
+                }
+                catch
+                {
+                    Clear();
+                     ForegroundColor = ConsoleColor.Red;
+                    WriteLine("That was not in the option. TRY AGAIN");
+                }
+                }
+        
+        }
+            static char Question14()
+        {
+            while (true)
+            {
+                try{
+ ForegroundColor = ConsoleColor.White;
+WriteLine("The ancient Egyptians used to sleep on pillows made of");
+ForegroundColor = ConsoleColor.Blue;
+WriteLine("a) Stone");
+ForegroundColor = ConsoleColor.Yellow;
+WriteLine("b) Cotton");
+ForegroundColor = ConsoleColor.Magenta;
+WriteLine("c) Wood");
+ForegroundColor = ConsoleColor.Green;
+WriteLine("d) Gold");
 ForegroundColor = ConsoleColor.DarkGray;
 WriteLine("TYPE JUST THE LETTER OF THE ANSWER");
 ForegroundColor = ConsoleColor.White;
@@ -872,7 +992,102 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                                  WrongAnswer(ref score, ref life); 
                                  question++;
                             }
-                          
+                            if (life==0)
+                            {
+                                ConsoleKey key=Lost(ref score);
+                            if (key == ConsoleKey.Enter)
+                             continue;
+                             else if (key==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }}
+                              Status(ref question, ref score, ref life);
+                            char question11=Question11();
+                            if (question11=='c')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score, ref life); 
+                                 question++;
+                            }
+                            if (life==0)
+                            {
+                                ConsoleKey key=Lost(ref score);
+                            if (key == ConsoleKey.Enter)
+                             continue;
+                             else if (key==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }
+                                } Status(ref question, ref score, ref life);
+                                char question12=Question12();
+                            if (question12=='c')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score, ref life); 
+                                 question++;
+                            }
+                            if (life==0)
+                            {
+                                ConsoleKey key=Lost(ref score);
+                            if (key == ConsoleKey.Enter)
+                             continue;
+                             else if (key==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }
+                                }
+                                 Status(ref question, ref score, ref life);
+                                char question13=Question13();
+                            if (question13=='c')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score, ref life); 
+                                 question++;
+                            }
+                            if (life==0)
+                            {
+                                ConsoleKey key=Lost(ref score);
+                            if (key == ConsoleKey.Enter)
+                             continue;
+                             else if (key==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }
+                                }
+                                Status(ref question, ref score, ref life);
+                                char question14=Question14();
+                            if (question14=='a')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score, ref life); 
+                                 question++;
+                            }
+                            if (life==0)
+                            {
+                                ConsoleKey key=Lost(ref score);
+                            if (key == ConsoleKey.Enter)
+                             continue;
+                             else if (key==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }
+                                }
                           ForegroundColor=ConsoleColor.Yellow;
                                    WriteLine("YOU HAVE COMPLETED THE TRIVIA ");
                             WriteLine($"YOUR FINAL SCORE IS {score} ");
@@ -887,7 +1102,7 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                              }
                             }
                         }
-                        static ConsoleKey Lost(ref int score)
+         static ConsoleKey Lost(ref int score)
                         {
                             while (true)
                             {
@@ -912,6 +1127,7 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                         }
 
         }
+
         
 
 
