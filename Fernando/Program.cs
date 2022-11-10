@@ -18,27 +18,37 @@ namespace MyApp // Note: actual namespace depends on the project name.
                             Clear();
                             int menu=FirstMenu();
                             switch (menu)
-                            {
+                            { 
+                                case 1:
+                                while (true)
+                                {
+                                    Clear();
+                                WriteLine("My classmate's part");
+                                Write("Press Esc to go back.");
+                                ConsoleKey key = Console.ReadKey().Key;
+                                if (key==ConsoleKey.Escape)
+                                {
+                                    break;
+                                }
+                                else 
+                                {
+                                    continue;
+                                }
+                                }
+                                break;
                                 case 2:
                                 while (true)
                                 {
-                                   int finalscore=HistoryTrivia();
-                                   ForegroundColor=ConsoleColor.Yellow;
-                            WriteLine($"YOUR FINAL SCORE IS {finalscore} ");
-                             ForegroundColor=ConsoleColor.White;
-                            Write("Press Esc if you want to go back to the menu, or  Press Enter if you want to play again:");
-                            ConsoleKey key = Console.ReadKey().Key;
-                            if (key == ConsoleKey.Enter)
-                             continue;
-                             else if (key==ConsoleKey.Escape)
-                             {
-                               break; 
-                             }
+                                HistoryTrivia();
+                                   break;
                                 }
                                 break;
                             }
+                            if (menu==6)
+                            {
+                                break;
+                            }
                         }
-                        
                         break;
                     case 2:
                     while (true)
@@ -129,7 +139,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                     Write("Put the number of the action you would like to do: ");
                     
                     int prompt = Convert.ToInt32(ReadLine());
-                    if (prompt == 1 || prompt == 2 || prompt == 3||prompt == 4)
+                    if (prompt == 1 || prompt == 2 || prompt == 3||prompt == 4||prompt == 5||prompt == 6)
                         return prompt;
                     else
                     {
@@ -268,10 +278,10 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                 }
         
         }
-         static void Status(ref int question, ref int score)
+         static void Status(ref int question, ref int score, ref int life)
         {
             ForegroundColor=ConsoleColor.Cyan;
-            WriteLine($"Question {question}  Score: {score}");
+            WriteLine($"Question {question}  Score: {score}  Lifes: {life}");
         }
         static void CorrectAnswer(ref int score)
         {
@@ -281,13 +291,14 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
         WriteLine(@"    +20 pts",20);
         score+=20;
         }
-        static void WrongAnswer(ref int score)
+        static void WrongAnswer(ref int score, ref int life)
         {
             ForegroundColor = ConsoleColor.Red;
         Write("INCORRECT");
          ForegroundColor = ConsoleColor.Red;
-        WriteLine(@"    -10 pts",20);
-        score-=10;
+        WriteLine(@"    -1 life",20);
+        score+=0;
+        life-=1;
         }
         static char Question4()
         {
@@ -530,12 +541,55 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
         
         }
         
-        static int HistoryTrivia()
+        static char Question10()
         {
+            while (true)
+            {
+                try{
+ ForegroundColor = ConsoleColor.White;
+WriteLine("How old was Queen Elizabeth II when she was crowned the Queen of England?");
+ForegroundColor = ConsoleColor.Blue;
+WriteLine("a) 19");
+ForegroundColor = ConsoleColor.Yellow;
+WriteLine("b) 22");
+ForegroundColor = ConsoleColor.Magenta;
+WriteLine("c) 27");
+ForegroundColor = ConsoleColor.Green;
+WriteLine("d) 76");
+ForegroundColor = ConsoleColor.DarkGray;
+WriteLine("TYPE JUST THE LETTER OF THE ANSWER");
+ForegroundColor = ConsoleColor.White;
+Write("Answer: ");
+char answer=Convert.ToChar(ReadLine());
+Clear();
+if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
+                        return answer;
+                    else
+                    {
+                        Clear();
+                         ForegroundColor = ConsoleColor.Red;
+                        WriteLine("That was not in the option. TRY AGAIN");
+                        continue;
+                    }
+                }
+                catch
+                {
+                    Clear();
+                     ForegroundColor = ConsoleColor.Red;
+                    WriteLine("That was not in the option. TRY AGAIN");
+                }
+                }
+        
+        }
+        static void HistoryTrivia()
+        {
+            while (true)
+            {
             Clear();
                                 int question=1;
                                 int score=0;
-                                Status(ref question, ref score);
+                                int life=3;
+                                Status(ref question, ref score, ref life);
                                 ForegroundColor = ConsoleColor.White;
                                 char question1=Question1();
                                 Clear();
@@ -545,10 +599,10 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                                       question++;
                                 }
                             else{
-                                WrongAnswer(ref score);
+                                WrongAnswer(ref score, ref life);
                                   question++;
                             }
-                            Status(ref question, ref score);
+                            Status(ref question, ref score, ref life);
                             char question2=Question2();
                             if (question2=='c')
                             {
@@ -557,10 +611,10 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                             }
                             else 
                             {
-                                 WrongAnswer(ref score); 
+                                 WrongAnswer(ref score, ref life); 
                                  question++;
                             }
-                            Status(ref question, ref score);
+                            Status(ref question, ref score, ref life);
                             char question3=Question3();
                             if (question3=='b')
                             {
@@ -569,9 +623,20 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                             }
                             else 
                             {
-                                 WrongAnswer(ref score); 
+                                 WrongAnswer(ref score, ref life); 
                                  question++;
                             }
+                            if (life==0)
+                            {
+                                ConsoleKey key=Lost(ref score);
+                            if (key == ConsoleKey.Enter)
+                             continue;
+                             else if (key==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }
+                            }
+                            Status(ref question, ref score, ref life);
                             char question4=Question4();
                             if (question4=='d')
                             {
@@ -580,9 +645,20 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                             }
                             else 
                             {
-                                 WrongAnswer(ref score); 
+                                 WrongAnswer(ref score, ref life); 
                                  question++;
                             }
+                             if (life==0)
+                            {
+                                ConsoleKey key=Lost(ref score);
+                            if (key == ConsoleKey.Enter)
+                             continue;
+                             else if (key==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }
+                            }
+                            Status(ref question, ref score, ref life);
                              char question5=Question5();
                             if (question5=='d')
                             {
@@ -591,9 +667,20 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                             }
                             else 
                             {
-                                 WrongAnswer(ref score); 
+                                 WrongAnswer(ref score, ref life); 
                                  question++;
                             }
+                             if (life==0)
+                            {
+                                ConsoleKey key=Lost(ref score);
+                            if (key == ConsoleKey.Enter)
+                             continue;
+                             else if (key==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }
+                            }
+                            Status(ref question, ref score, ref life);
                             char question6=Question6();
                             if (question6=='a')
                             {
@@ -602,9 +689,20 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                             }
                             else 
                             {
-                                 WrongAnswer(ref score); 
+                                 WrongAnswer(ref score, ref life); 
                                  question++;
                             }
+                             if (life==0)
+                            {
+                                ConsoleKey key=Lost(ref score);
+                            if (key == ConsoleKey.Enter)
+                             continue;
+                             else if (key==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }
+                            }
+                            Status(ref question, ref score, ref life);
                              char question7=Question7();
                             if (question7=='b')
                             {
@@ -613,9 +711,20 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                             }
                             else 
                             {
-                                 WrongAnswer(ref score); 
+                                 WrongAnswer(ref score, ref life); 
                                  question++;
                             }
+                             if (life==0)
+                            {
+                                ConsoleKey key=Lost(ref score);
+                            if (key == ConsoleKey.Enter)
+                             continue;
+                             else if (key==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }
+                            }
+                            Status(ref question, ref score, ref life);
                             char question8=Question8();
                             if (question8=='d')
                             {
@@ -624,9 +733,20 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                             }
                             else 
                             {
-                                 WrongAnswer(ref score); 
+                                 WrongAnswer(ref score, ref life); 
                                  question++;
                             }
+                             if (life==0)
+                            {
+                                ConsoleKey key=Lost(ref score);
+                            if (key == ConsoleKey.Enter)
+                             continue;
+                             else if (key==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }
+                            }
+                            Status(ref question, ref score, ref life);
                             char question9=Question9();
                             if (question9=='a')
                             {
@@ -635,11 +755,67 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                             }
                             else 
                             {
-                                 WrongAnswer(ref score); 
+                                 WrongAnswer(ref score, ref life); 
                                  question++;
                             }
-                            return score;
+                             if (life==0)
+                            {
+                                ConsoleKey key=Lost(ref score);
+                            if (key == ConsoleKey.Enter)
+                             continue;
+                             else if (key==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }
                             }
+                            Status(ref question, ref score, ref life);
+                            char question10=Question10();
+                            if (question10=='c')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score, ref life); 
+                                 question++;
+                            }
+                          
+                          ForegroundColor=ConsoleColor.Yellow;
+                                   WriteLine("YOU HAVE COMPLETED THE TRIVIA ");
+                            WriteLine($"YOUR FINAL SCORE IS {score} ");
+                             ForegroundColor=ConsoleColor.White;
+                            Write("Press Esc if you want to go back to the menu, or  Press Enter if you want to play again:");
+                            ConsoleKey key2 = Console.ReadKey().Key;
+                            if (key2 == ConsoleKey.Enter)
+                             continue;
+                             else if (key2==ConsoleKey.Escape)
+                             {
+                               break; 
+                             }
+                            }
+                        }
+                        static ConsoleKey Lost(ref int score)
+                        {
+                            while (true)
+                            {
+                                Clear();
+                                WriteLine("YOU LOST");
+                                ForegroundColor=ConsoleColor.White;
+                                WriteLine($"Score: {score}");
+                                Write("Press 'Enter' if you wanna try again, or press Esc if you want to go back to the menu.");
+                                 ConsoleKey key = Console.ReadKey().Key;
+                                 if (key == ConsoleKey.Enter||key==ConsoleKey.Escape)
+                                 {
+                                    return key;
+                                 }
+                                 else
+                                 {
+                                    continue;
+                                 }
+                            }
+
+                        }
                         }
 
         }
