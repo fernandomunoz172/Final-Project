@@ -641,11 +641,11 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
  ForegroundColor = ConsoleColor.White;
 WriteLine("Adolf Hitler was born in which country?");
 ForegroundColor = ConsoleColor.Blue;
-WriteLine("a) Russia");
+WriteLine("a) Germany");
 ForegroundColor = ConsoleColor.Yellow;
 WriteLine("b) England");
 ForegroundColor = ConsoleColor.Magenta;
-WriteLine("c) Germany");
+WriteLine("c) Austria");
 ForegroundColor = ConsoleColor.Green;
 WriteLine("d) France");
 ForegroundColor = ConsoleColor.DarkGray;
