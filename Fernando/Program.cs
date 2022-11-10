@@ -228,6 +228,7 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
         
         }
          static char Question3()
+        
         {
             while (true)
             {
@@ -288,6 +289,247 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
         WriteLine(@"    -10 pts",20);
         score-=10;
         }
+        static char Question4()
+        {
+            while (true)
+            {
+                try{
+ ForegroundColor = ConsoleColor.White;
+WriteLine("How many U.S. presidents have been assassinated?");
+ForegroundColor = ConsoleColor.Blue;
+WriteLine("a) 3");
+ForegroundColor = ConsoleColor.Yellow;
+WriteLine("b) 6");
+ForegroundColor = ConsoleColor.Magenta;
+WriteLine("c) 10");
+ForegroundColor = ConsoleColor.Green;
+WriteLine("d) 4");
+ForegroundColor = ConsoleColor.DarkGray;
+WriteLine("TYPE JUST THE LETTER OF THE ANSWER");
+ForegroundColor = ConsoleColor.White;
+Write("Answer: ");
+char answer=Convert.ToChar(ReadLine());
+Clear();
+if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
+                        return answer;
+                    else
+                    {
+                        Clear();
+                         ForegroundColor = ConsoleColor.Red;
+                        WriteLine("That was not in the option. TRY AGAIN");
+                        continue;
+                    }
+                }
+                catch
+                {
+                    Clear();
+                     ForegroundColor = ConsoleColor.Red;
+                    WriteLine("That was not in the option. TRY AGAIN");
+                }
+                }
+        
+        }
+        static char Question5()
+        {
+            while (true)
+            {
+                try{
+ ForegroundColor = ConsoleColor.White;
+WriteLine("What year did women receive the right to vote in the United States??");
+ForegroundColor = ConsoleColor.Blue;
+WriteLine("a) 1923");
+ForegroundColor = ConsoleColor.Yellow;
+WriteLine("b) 1823");
+ForegroundColor = ConsoleColor.Magenta;
+WriteLine("c) 1886");
+ForegroundColor = ConsoleColor.Green;
+WriteLine("d) 1920");
+ForegroundColor = ConsoleColor.DarkGray;
+WriteLine("TYPE JUST THE LETTER OF THE ANSWER");
+ForegroundColor = ConsoleColor.White;
+Write("Answer: ");
+char answer=Convert.ToChar(ReadLine());
+Clear();
+if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
+                        return answer;
+                    else
+                    {
+                        Clear();
+                         ForegroundColor = ConsoleColor.Red;
+                        WriteLine("That was not in the option. TRY AGAIN");
+                        continue;
+                    }
+                }
+                catch
+                {
+                    Clear();
+                     ForegroundColor = ConsoleColor.Red;
+                    WriteLine("That was not in the option. TRY AGAIN");
+                }
+                }
+        
+        }
+        static char Question6()
+        {
+            while (true)
+            {
+                try{
+ ForegroundColor = ConsoleColor.White;
+WriteLine("What year did the Berlin wall fall?");
+ForegroundColor = ConsoleColor.Blue;
+WriteLine("a) 1989");
+ForegroundColor = ConsoleColor.Yellow;
+WriteLine("b) 1889");
+ForegroundColor = ConsoleColor.Magenta;
+WriteLine("c) 1991");
+ForegroundColor = ConsoleColor.Green;
+WriteLine("d) 1990");
+ForegroundColor = ConsoleColor.DarkGray;
+WriteLine("TYPE JUST THE LETTER OF THE ANSWER");
+ForegroundColor = ConsoleColor.White;
+Write("Answer: ");
+char answer=Convert.ToChar(ReadLine());
+Clear();
+if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
+                        return answer;
+                    else
+                    {
+                        Clear();
+                         ForegroundColor = ConsoleColor.Red;
+                        WriteLine("That was not in the option. TRY AGAIN");
+                        continue;
+                    }
+                }
+                catch
+                {
+                    Clear();
+                     ForegroundColor = ConsoleColor.Red;
+                    WriteLine("That was not in the option. TRY AGAIN");
+                }
+                }
+        
+        }
+        static char Question7()
+        {
+            while (true)
+            {
+                try{
+ ForegroundColor = ConsoleColor.White;
+WriteLine("Who was prime minister of the UK for most of the Second World War?");
+ForegroundColor = ConsoleColor.Blue;
+WriteLine("a) Margareth Thatcher");
+ForegroundColor = ConsoleColor.Yellow;
+WriteLine("b) Winston Churchil");
+ForegroundColor = ConsoleColor.Magenta;
+WriteLine("c) Anthony Eden");
+ForegroundColor = ConsoleColor.Green;
+WriteLine("d) Harold McMillan");
+ForegroundColor = ConsoleColor.DarkGray;
+WriteLine("TYPE JUST THE LETTER OF THE ANSWER");
+ForegroundColor = ConsoleColor.White;
+Write("Answer: ");
+char answer=Convert.ToChar(ReadLine());
+Clear();
+if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
+                        return answer;
+                    else
+                    {
+                        Clear();
+                         ForegroundColor = ConsoleColor.Red;
+                        WriteLine("That was not in the option. TRY AGAIN");
+                        continue;
+                    }
+                }
+                catch
+                {
+                    Clear();
+                     ForegroundColor = ConsoleColor.Red;
+                    WriteLine("That was not in the option. TRY AGAIN");
+                }
+                }
+        
+        }
+        static char Question8()
+        {
+            while (true)
+            {
+                try{
+ ForegroundColor = ConsoleColor.White;
+WriteLine("In which country in ancient times was mummification carried out on important people when they died?");
+ForegroundColor = ConsoleColor.Blue;
+WriteLine("a) Ancient Greece");
+ForegroundColor = ConsoleColor.Yellow;
+WriteLine("b) Ancient China");
+ForegroundColor = ConsoleColor.Magenta;
+WriteLine("c) Ancient India");
+ForegroundColor = ConsoleColor.Green;
+WriteLine("d) Ancient Egypt");
+ForegroundColor = ConsoleColor.DarkGray;
+WriteLine("TYPE JUST THE LETTER OF THE ANSWER");
+ForegroundColor = ConsoleColor.White;
+Write("Answer: ");
+char answer=Convert.ToChar(ReadLine());
+Clear();
+if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
+                        return answer;
+                    else
+                    {
+                        Clear();
+                         ForegroundColor = ConsoleColor.Red;
+                        WriteLine("That was not in the option. TRY AGAIN");
+                        continue;
+                    }
+                }
+                catch
+                {
+                    Clear();
+                     ForegroundColor = ConsoleColor.Red;
+                    WriteLine("That was not in the option. TRY AGAIN");
+                }
+                }
+        
+        }
+        static char Question9()
+        {
+            while (true)
+            {
+                try{
+ ForegroundColor = ConsoleColor.White;
+WriteLine("What was the date of the Boston Tea Party?");
+ForegroundColor = ConsoleColor.Blue;
+WriteLine("a) Dec. 16, 1773,");
+ForegroundColor = ConsoleColor.Yellow;
+WriteLine("b) Dec. 23, 1774");
+ForegroundColor = ConsoleColor.Magenta;
+WriteLine("c) Dec. 17, 1773");
+ForegroundColor = ConsoleColor.Green;
+WriteLine("d) Dec, 16 1774");
+ForegroundColor = ConsoleColor.DarkGray;
+WriteLine("TYPE JUST THE LETTER OF THE ANSWER");
+ForegroundColor = ConsoleColor.White;
+Write("Answer: ");
+char answer=Convert.ToChar(ReadLine());
+Clear();
+if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
+                        return answer;
+                    else
+                    {
+                        Clear();
+                         ForegroundColor = ConsoleColor.Red;
+                        WriteLine("That was not in the option. TRY AGAIN");
+                        continue;
+                    }
+                }
+                catch
+                {
+                    Clear();
+                     ForegroundColor = ConsoleColor.Red;
+                    WriteLine("That was not in the option. TRY AGAIN");
+                }
+                }
+        
+        }
+        
         static int HistoryTrivia()
         {
             Clear();
@@ -330,7 +572,72 @@ if ( answer== 'a' || answer == 'b'|| answer=='c'||answer == 'd')
                                  WrongAnswer(ref score); 
                                  question++;
                             }
-                            
+                            char question4=Question4();
+                            if (question4=='d')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score); 
+                                 question++;
+                            }
+                             char question5=Question5();
+                            if (question5=='d')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score); 
+                                 question++;
+                            }
+                            char question6=Question6();
+                            if (question6=='a')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score); 
+                                 question++;
+                            }
+                             char question7=Question7();
+                            if (question7=='b')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score); 
+                                 question++;
+                            }
+                            char question8=Question8();
+                            if (question8=='d')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score); 
+                                 question++;
+                            }
+                            char question9=Question9();
+                            if (question9=='a')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score); 
+                                 question++;
+                            }
                             return score;
                             }
                         }
