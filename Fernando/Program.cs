@@ -48,8 +48,19 @@ namespace MyApp // Note: actual namespace depends on the project name.
                                  WrongAnswer(ref score); 
                                  question++;
                             }
-
-    
+                            Status(ref question, ref score);
+                            char question3=Question3();
+                            if (question3=='b')
+                            {
+                                 CorrectAnswer(ref score);
+                                 question++;
+                            }
+                            else 
+                            {
+                                 WrongAnswer(ref score); 
+                                 question++;
+                            }
+                            
                                 break;
                             }
                         }
@@ -61,7 +72,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
                         Console.Clear();
                     ForegroundColor=ConsoleColor.Blue;
                     WriteLine("HOW TO PLAY ");
-                    Write("Press any key to get back to the menu.");
+                    ForegroundColor=ConsoleColor.White;
+                    WriteLine("Each section (Mathematics, geography, biology, history and movies) is divided into 2 or 3 mini-games, like for example; trivia, character guess, continue the story, and riddles. Every time you complete one of these minigames you will have more points and you will be able to finish and unlock more sections. For the multiple choice questions you must answer only with the letters ''a', 'b', 'c', and 'd'. If you get a question right you will have 20 more points, otherwise, if you answer wrong you will lose 10 points");
+                     Write("Press any key to get back to the menu.");
                     Console.ReadKey();
                     Console.Clear();
                         break;
@@ -125,11 +138,17 @@ namespace MyApp // Note: actual namespace depends on the project name.
                     ForegroundColor = ConsoleColor.Red;
                     WriteLine("2. HISTORY");
                     ForegroundColor = ConsoleColor.Green;
-                    WriteLine("3. BIOLOGY");
+                    Write("3. BIOLOGY");
+                    ForegroundColor = ConsoleColor.DarkGray;
+                    WriteLine(@$"NOT AVAILABLE", 20);
                       ForegroundColor = ConsoleColor.Blue;
-                       WriteLine("4. GEOGRAPHY");
+                       Write("4. GEOGRAPHY");
+                       ForegroundColor = ConsoleColor.DarkGray;
+                    WriteLine(@$"NOT AVAILABLE", 20);
                         ForegroundColor = ConsoleColor.Magenta;
-                       WriteLine("5. GEOGRAPHY");
+                       Write("5. GEOGRAPHY");
+                       ForegroundColor = ConsoleColor.DarkGray;
+                    WriteLine(@$"NOT AVAILABLE", 20);
                         ForegroundColor = ConsoleColor.DarkRed;
                        WriteLine("6. BACK");
                         ForegroundColor = ConsoleColor.White;
@@ -243,11 +262,11 @@ WriteLine("Which era marked a switch from agricultural practices to industrial p
 ForegroundColor = ConsoleColor.Blue;
 WriteLine("a) French Revolution");
 ForegroundColor = ConsoleColor.Yellow;
-WriteLine("b) ");
+WriteLine("b) The Industrial Revolution");
 ForegroundColor = ConsoleColor.Magenta;
-WriteLine("c) James Madison");
+WriteLine("c) Agricultural Revolution");
 ForegroundColor = ConsoleColor.Green;
-WriteLine("d) Abraham Lincoln");
+WriteLine("d) The Renaissance");
 ForegroundColor = ConsoleColor.DarkGray;
 WriteLine("TYPE JUST THE LETTER OF THE ANSWER");
 ForegroundColor = ConsoleColor.White;
